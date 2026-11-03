@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+.env
+push-log.txt
+push-done.txt
+push-github.ps1
+push-github.js
+gitver-out.txt
+gitver-err.txt
+shell-test.txt
+_out.txt

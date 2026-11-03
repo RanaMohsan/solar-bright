@@ -1,0 +1,55 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+<main id="main-content">
+  <section class="page-hero">
+    <p class="section-label" data-animate="hero">Services · Lahore</p>
+    <h1 data-animate="hero">Solar wash services across Lahore.</h1>
+    <p data-animate="hero">Residential and commercial solar panel cleaning from PIA Main Road — book the best solar wash near you on WhatsApp.</p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-narrow">
+      <div class="service-grid stagger" style="grid-template-columns: 1fr;">
+        <article class="service-item">
+          <h3>Residential solar panel cleaning Lahore</h3>
+          <p>Full-array soft brush wash for homes and societies — ideal after dusty spells or before peak summer.</p>
+        </article>
+        <article class="service-item">
+          <h3>Commercial rooftop solar wash</h3>
+          <p>Larger Lahore installations with scheduled visits so arrays stay productive year-round.</p>
+        </article>
+        <article class="service-item">
+          <h3>Edge &amp; frame detail rinse</h3>
+          <p>Careful pass along frames where grit and streaks collect after monsoon dust.</p>
+        </article>
+        <article class="service-item">
+          <h3>Seasonal maintenance plan</h3>
+          <p>Recurring solar wash for DHA, Bahria, Johar Town and citywide dusty months.</p>
+        </article>
+      </div>
+
+      <div class="cta-row" style="margin-top: 2.75rem;">
+        <a class="btn btn-sun reveal" href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer">WhatsApp for a quote</a>
+        <a class="btn btn-outline reveal" href="/work">View results</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="section-narrow">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="section-title reveal">Solar wash near me — quick answers</h2>
+      <div class="faq-list stagger">
+        <% faqs.forEach((item) => { %>
+          <details class="faq-item">
+            <summary><%= item.q %></summary>
+            <p><%= item.a %></p>
+          </details>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,65 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+<main id="main-content">
+  <section class="page-hero">
+    <p class="section-label" data-animate="hero">Contact · Lahore</p>
+    <h1 data-animate="hero">Book solar wash on WhatsApp.</h1>
+    <p data-animate="hero">Office: <%= brand.fullAddress %>. Tap send — your message opens in WhatsApp chat with <%= brand.phone %>.</p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-narrow contact-layout">
+      <div class="reveal">
+        <p class="section-label">Solar Bright Lahore</p>
+        <h2 class="section-title" style="font-size: clamp(1.7rem, 3.5vw, 2.2rem);"><%= brand.tagline %></h2>
+        <ul class="contact-points">
+          <li><strong>Address:</strong> <%= brand.fullAddress %></li>
+          <li><strong>WhatsApp:</strong> <a href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer"><%= brand.phone %></a></li>
+          <li><strong>Call:</strong> <a href="tel:<%= brand.phoneTel %>"><%= brand.phone %></a></li>
+          <li><strong>Email:</strong> <a href="mailto:<%= brand.email %>"><%= brand.email %></a></li>
+          <li><strong>Areas:</strong> <%= brand.areaServed.join(", ") %></li>
+        </ul>
+        <a class="btn btn-sun" style="margin-top: 1.25rem;" href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer">Open WhatsApp chat</a>
+        <div class="media-frame" style="min-height: 12rem; margin-top: 1.75rem;">
+          <img src="/media/logo.png" alt="Solar Bright logo solar wash Lahore PIA Road" style="object-fit: contain; padding: 2rem; background: #fff; min-height: 12rem;" width="400" height="400" />
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="form-note">Fill the form and press send — WhatsApp opens with your message ready for Solar Bright Lahore.</p>
+        <form class="contact-form" method="post" action="/contact">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email (optional note in chat)</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Area in Lahore, system size, preferred day for solar wash..."></textarea>
+          </div>
+          <button class="btn btn-sun" type="submit">Send on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" style="padding-top: 0;">
+    <div class="section-narrow">
+      <h2 class="section-title reveal">Booking FAQ</h2>
+      <div class="faq-list stagger">
+        <% faqs.forEach((item) => { %>
+          <details class="faq-item">
+            <summary><%= item.q %></summary>
+            <p><%= item.a %></p>
+          </details>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

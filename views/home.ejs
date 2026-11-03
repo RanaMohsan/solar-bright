@@ -1,0 +1,187 @@
+<%- include('partials/head') %>
+<%- include('partials/nav') %>
+
+<main id="main-content">
+  <section class="media-stage" id="mediaStage" aria-label="Solar Bright live solar panel cleaning reel Lahore">
+    <div class="media-deck" id="mediaDeck">
+      <% mediaReel.forEach((item, index) => { %>
+        <div
+          class="media-slide<%= index === 0 ? ' is-active' : '' %>"
+          data-index="<%= index %>"
+          data-type="<%= item.type %>"
+          data-label="<%= item.label %>"
+        >
+          <% if (item.type === 'video') { %>
+            <video
+              src="<%= item.src %>"
+              muted
+              playsinline
+              preload="auto"
+              title="<%= item.alt %>"
+              <%= index === 0 ? 'autoplay' : '' %>
+            ></video>
+          <% } else { %>
+            <img src="<%= item.src %>" alt="<%= item.alt %>" width="1600" height="900" />
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="media-stage-ui">
+      <div class="hero-copy">
+        <p class="hero-kicker" data-animate="hero">Solar wash · Lahore</p>
+        <h1 class="hero-brand" data-animate="hero">
+          <span class="sun">Solar</span>
+          <span class="bright">Bright</span>
+        </h1>
+        <p class="hero-title" data-animate="hero">Best solar panel cleaning in Lahore.</p>
+        <p class="hero-text" data-animate="hero"><%= brand.tagline %> — solar wash near you from our PIA Main Road office. Homes &amp; commercial rooftops across Lahore.</p>
+        <div class="cta-row" data-animate="hero">
+          <a class="btn btn-sun" href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer">WhatsApp now</a>
+          <a class="btn btn-ghost" href="/work">See Lahore results</a>
+        </div>
+      </div>
+
+      <div class="media-controls">
+        <div class="media-progress" id="mediaProgress" aria-hidden="true">
+          <% mediaReel.forEach((_, index) => { %>
+            <button type="button" data-go="<%= index %>"<%= index === 0 ? ' class="is-active"' : '' %>>
+              <span></span>
+            </button>
+          <% }) %>
+        </div>
+        <div class="media-meta">
+          <p class="media-label" id="mediaLabel"><%= mediaReel[0].label %></p>
+          <div class="media-nav">
+            <button type="button" id="mediaPrev" aria-label="Previous clip">‹</button>
+            <button type="button" id="mediaNext" aria-label="Next clip">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Solar wash Lahore</span>
+      <span>Solar wash near me</span>
+      <span>PIA Main Road</span>
+      <span>Panel dust cleaning</span>
+      <span>Solar wash Lahore</span>
+      <span>Solar wash near me</span>
+      <span>PIA Main Road</span>
+      <span>Panel dust cleaning</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-narrow split">
+      <div>
+        <p class="section-label reveal">Why Lahore needs solar wash</p>
+        <h2 class="section-title reveal">Dusty panels waste the sun you already paid for.</h2>
+        <p class="section-lead reveal">
+          Looking for <strong>solar wash near me</strong> in Lahore? Solar Bright restores output with soft-brush cleaning for residential and commercial systems — based on <strong>PIA Main Road</strong>, serving the whole city.
+        </p>
+        <ul class="feature-list stagger">
+          <li>
+            <span class="feature-num">01</span>
+            <div>
+              <strong>Local Lahore team</strong>
+              <p>Fast booking for DHA, Johar Town, Gulberg, Bahria Town, Cantt &amp; more.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feature-num">02</span>
+            <div>
+              <strong>Safe soft-brush wash</strong>
+              <p>Panel-friendly tools — dirt lifts without grinding grit into the glass.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feature-num">03</span>
+            <div>
+              <strong>WhatsApp quotes</strong>
+              <p>Message <%= brand.phone %> — chat opens straight on WhatsApp.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="media-frame reveal">
+        <img src="/media/cleaning-closeup.png" alt="Best solar panel washing in Lahore — soft brush foam clean by Solar Bright" width="1200" height="900" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-narrow">
+      <p class="section-label reveal">Lahore reviews</p>
+      <h2 class="section-title reveal">What customers say about our solar wash.</h2>
+      <div class="review-grid stagger">
+        <% reviews.forEach((review) => { %>
+          <article class="review-card">
+            <p class="review-stars" aria-label="<%= review.rating %> out of 5 stars"><%= "★".repeat(review.rating) %></p>
+            <p class="review-body">“<%= review.body %>”</p>
+            <p class="review-author"><strong><%= review.author %></strong> · <%= review.area %></p>
+          </article>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-narrow">
+      <p class="section-label reveal">Proof</p>
+      <h2 class="section-title reveal">From dull dust to deep blue.</h2>
+      <div class="work-grid stagger">
+        <article class="work-item">
+          <div class="work-thumb">
+            <img src="/media/before-after-roof.png" alt="Before and after solar panel cleaning Lahore rooftop array" loading="lazy" />
+          </div>
+          <p class="work-meta">Lahore rooftop</p>
+          <h3>Before &amp; after solar wash</h3>
+          <p>Clean cells catch the sky again while dusty neighbours stay matte.</p>
+        </article>
+        <article class="work-item">
+          <div class="work-thumb">
+            <video src="/media/clean-demo-1.mp4" muted loop playsinline autoplay title="Solar wash video Lahore"></video>
+          </div>
+          <p class="work-meta">On-site reel</p>
+          <h3>Live cleaning in motion</h3>
+          <p>Real soft-brush solar panel cleaning footage from our Lahore jobs.</p>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top: 2.5rem;">
+        <a class="btn btn-panel reveal" href="/services">Solar wash services</a>
+        <a class="btn btn-outline reveal" href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="section-narrow">
+      <p class="section-label reveal">FAQ · Lahore</p>
+      <h2 class="section-title reveal">Solar wash questions, answered.</h2>
+      <div class="faq-list stagger">
+        <% faqs.forEach((item) => { %>
+          <details class="faq-item">
+            <summary><%= item.q %></summary>
+            <p><%= item.a %></p>
+          </details>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section location-band">
+    <div class="section-narrow">
+      <p class="section-label reveal">Visit / book</p>
+      <h2 class="section-title reveal">Office on PIA Main Road, Lahore.</h2>
+      <p class="section-lead reveal">
+        <strong><%= brand.fullAddress %></strong><br />
+        Phone &amp; WhatsApp: <a href="<%= brand.whatsappQuoteUrl %>" target="_blank" rel="noopener noreferrer"><%= brand.phone %></a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

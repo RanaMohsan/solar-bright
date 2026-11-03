@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= seo.title %></title>
+  <meta name="description" content="<%= seo.description %>" />
+  <meta name="keywords" content="<%= seo.keywords %>" />
+  <meta name="author" content="<%= brand.name %>" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="geo.region" content="PK-PB" />
+  <meta name="geo.placename" content="Lahore" />
+  <meta name="geo.position" content="<%= brand.geo.latitude %>;<%= brand.geo.longitude %>" />
+  <meta name="ICBM" content="<%= brand.geo.latitude %>, <%= brand.geo.longitude %>" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="3 days" />
+  <link rel="canonical" href="<%= seo.canonical %>" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_PK" />
+  <meta property="og:site_name" content="<%= brand.name %>" />
+  <meta property="og:title" content="<%= seo.title %>" />
+  <meta property="og:description" content="<%= seo.description %>" />
+  <meta property="og:url" content="<%= seo.canonical %>" />
+  <meta property="og:image" content="<%= seo.ogImage %>" />
+  <meta property="og:image:alt" content="Solar panel cleaning before and after in Lahore by Solar Bright" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= seo.title %>" />
+  <meta name="twitter:description" content="<%= seo.description %>" />
+  <meta name="twitter:image" content="<%= seo.ogImage %>" />
+
+  <meta name="theme-color" content="#1a6fb5" />
+  <link rel="icon" href="/media/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/media/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <script type="application/ld+json"><%- JSON.stringify(jsonLd) %></script>
+</head>
+<body data-page="<%= current %>">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-transition" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
