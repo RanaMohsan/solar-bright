@@ -5,6 +5,8 @@ node_modules/
 push-*.txt
 push-*.js
 push-*.ps1
+push-done.txt
+push-solar-code-log.txt
 setup-*.js
 fix-*.js
 transfer-*.js
